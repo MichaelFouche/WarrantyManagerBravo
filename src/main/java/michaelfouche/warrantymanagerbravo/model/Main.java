@@ -21,7 +21,13 @@ public class Main {
             .id("")
             .contact("")
             .build();
-            
+        AddProduct addproduct = new AddProduct.Builder()
+                .model("")
+                .sn("")
+                .manufacturer("")
+                .purchaseDate("")
+                .retailer("")
+                .build();
         VerifyValidEntry vve = new VerifyValidEntry();
         boolean valid = vve.verifyValidEntry(fname, lname,id);
         

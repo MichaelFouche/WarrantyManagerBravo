@@ -16,31 +16,29 @@ import org.testng.annotations.Test;
  *
  * @author foosh
  */
-public class AddUserTest {
+public class VerifyValidEntryTest {
     
-    public AddUserTest() {
+    public VerifyValidEntryTest() {
     }
     // TODO add test methods here.
     // The methods must be annotated with annotation @Test. For example:
     //
     // @Test
     // public void hello() {}
-    
+
     @Test
-    public void testCreationAddUser() throws Exception {
-       AddUser adduser = new AddUser.Builder() 
-            .firstname("Mike")
-            .lastname("Foosh")
-            .id("9107085078081")
-            .contact("0724857747")
-            .build();
-       Assert.assertEquals(adduser.getFirstname(),"Mike");
-       Assert.assertEquals(adduser.getLastname(),"Foosh");       
-       Assert.assertEquals(adduser.getId(),"9107085078081");       
-       Assert.assertEquals(adduser.getContact(),"0724857747");
+    public void testVerifyValidEntryTrue() throws Exception {
+       VerifyValidEntry vve = new VerifyValidEntry();
+       Assert.assertTrue(vve.verifyValidEntry("Jack", "Daniels", "9107"));
+       
         
     }
-    
+    @Test
+    public void testVerifyValidEntryFalse() throws Exception {
+       VerifyValidEntry vve = new VerifyValidEntry();       
+       Assert.assertFalse(vve.verifyValidEntry("", "Daniels", "9107"));
+        
+    }
     
     @BeforeClass
     public static void setUpClass() throws Exception {

@@ -12,6 +12,9 @@ import java.util.List;
  */
 public class Main {
     public static void main(String [] args){
+        String fname = "Jack";
+        String lname = "Daniels";
+        String id = "";
         AddUser adduser = new AddUser.Builder() 
             .firstname("")
             .lastname("")
@@ -19,7 +22,9 @@ public class Main {
             .contact("")
             .build();
             
-            
+        VerifyValidEntry vve = new VerifyValidEntry();
+        boolean valid = vve.verifyValidEntry(fname, lname,id);
+        
         
     }
             

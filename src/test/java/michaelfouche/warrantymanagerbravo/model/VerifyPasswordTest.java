@@ -16,32 +16,21 @@ import org.testng.annotations.Test;
  *
  * @author foosh
  */
-public class AddUserTest {
+public class VerifyPasswordTest {
     
-    public AddUserTest() {
+    public VerifyPasswordTest() {
     }
     // TODO add test methods here.
     // The methods must be annotated with annotation @Test. For example:
     //
     // @Test
     // public void hello() {}
-    
     @Test
-    public void testCreationAddUser() throws Exception {
-       AddUser adduser = new AddUser.Builder() 
-            .firstname("Mike")
-            .lastname("Foosh")
-            .id("9107085078081")
-            .contact("0724857747")
-            .build();
-       Assert.assertEquals(adduser.getFirstname(),"Mike");
-       Assert.assertEquals(adduser.getLastname(),"Foosh");       
-       Assert.assertEquals(adduser.getId(),"9107085078081");       
-       Assert.assertEquals(adduser.getContact(),"0724857747");
-        
+    public void testVerifyLogin() throws Exception {
+        VerifyPassword vp = new VerifyPassword();
+        Assert.assertTrue(vp.verifyPassword("Mike123", "Mike123"));                
     }
-    
-    
+
     @BeforeClass
     public static void setUpClass() throws Exception {
     }

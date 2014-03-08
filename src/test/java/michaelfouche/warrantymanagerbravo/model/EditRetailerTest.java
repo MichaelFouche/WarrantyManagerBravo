@@ -4,6 +4,8 @@
  */
 package michaelfouche.warrantymanagerbravo.model;
 
+import michaelfouche.warrantymanagerbravo.model.Retailer.EditRetailer;
+import michaelfouche.warrantymanagerbravo.model.Retailer.AddRetailer;
 import org.testng.Assert;
 import static org.testng.Assert.*;
 import org.testng.annotations.AfterClass;

@@ -4,6 +4,10 @@
  */
 package michaelfouche.warrantymanagerbravo.model;
 
+import michaelfouche.warrantymanagerbravo.model.Warranty.CalculateInWarranty;
+import michaelfouche.warrantymanagerbravo.model.User.VerifyValidUserEntry;
+import michaelfouche.warrantymanagerbravo.model.User.AddUser;
+import michaelfouche.warrantymanagerbravo.model.Product.AddProduct;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;

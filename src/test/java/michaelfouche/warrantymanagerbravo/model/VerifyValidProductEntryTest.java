@@ -4,6 +4,7 @@
  */
 package michaelfouche.warrantymanagerbravo.model;
 
+import michaelfouche.warrantymanagerbravo.model.Product.VerifyValidProductEntry;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import org.testng.Assert;

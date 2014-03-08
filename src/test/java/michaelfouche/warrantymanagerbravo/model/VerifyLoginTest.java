@@ -4,6 +4,7 @@
  */
 package michaelfouche.warrantymanagerbravo.model;
 
+import michaelfouche.warrantymanagerbravo.model.Login.VerifyLogin;
 import org.testng.Assert;
 import static org.testng.Assert.*;
 import org.testng.annotations.AfterClass;

@@ -2,8 +2,9 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package michaelfouche.warrantymanagerbravo.model;
+package michaelfouche.warrantymanagerbravo.model.User;
 
+import michaelfouche.warrantymanagerbravo.model.User.AddUser;
 import java.util.List;
 
 /**

@@ -14,7 +14,7 @@ import java.util.Date;
 public class DaysDifference {
     public long calculateDaysDifference(Date purchaseDate){
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-        Date now = new Date();
+        Date now = (new Date());
         return (now.getTime() - purchaseDate.getTime())/(1000 * 60 * 60 * 24) ;    
     }
 }

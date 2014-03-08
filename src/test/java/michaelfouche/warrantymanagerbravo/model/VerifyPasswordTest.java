@@ -26,7 +26,7 @@ public class VerifyPasswordTest {
     // @Test
     // public void hello() {}
     @Test
-    public void testVerifyLogin() throws Exception {
+    public void testVerifyPassword() throws Exception {
         VerifyPassword vp = new VerifyPassword();
         Assert.assertTrue(vp.verifyPassword("Mike123", "Mike123"));                
     }

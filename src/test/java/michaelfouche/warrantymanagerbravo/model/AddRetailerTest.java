@@ -16,9 +16,9 @@ import org.testng.annotations.Test;
  *
  * @author foosh
  */
-public class EditProductTest {
+public class AddRetailerTest {
     
-    public EditProductTest() {
+    public AddRetailerTest() {
     }
     // TODO add test methods here.
     // The methods must be annotated with annotation @Test. For example:
@@ -27,23 +27,18 @@ public class EditProductTest {
     // public void hello() {}
 
     @Test
-    public void testEditProduct() throws Exception {
-       AddProduct addproduct = new AddProduct.Builder() 
-            .model("S4")
-            .sn("123BA321")
-            .manufacturer("Samsung")
-            .purchaseDate("04112013")
-            .retailer("Vodacom-Somerset-01")
+    public void testCreationAddRetailer() throws Exception {
+       AddRetailer addRetailer = new AddRetailer.Builder() 
+            .name("Vodacom-Somerset-01")
+            .city("Somerset West")
+            .province("Western Cape")
             .build();
-       EditProduct ed = new EditProduct();
-       addproduct = ed.editProduct("S4-Mini", "", "", "", "",addproduct);
-       Assert.assertEquals(addproduct.getModel(),"S4-Mini");
-       Assert.assertEquals(addproduct.getSn(),"123BA321");       
-       Assert.assertEquals(addproduct.getManufacturer(),"Samsung");   
-       Assert.assertEquals(addproduct.getPurchaseDate(),"04112013"); 
-       Assert.assertEquals(addproduct.getRetailer(),"Vodacom-Somerset-01");
+       Assert.assertEquals(addRetailer.getName(),"Vodacom-Somerset-01");
+       Assert.assertEquals(addRetailer.getCity(),"Somerset West");       
+       Assert.assertEquals(addRetailer.getProvince(),"Western Cape");   
         
     }
+    
     @BeforeClass
     public static void setUpClass() throws Exception {
     }

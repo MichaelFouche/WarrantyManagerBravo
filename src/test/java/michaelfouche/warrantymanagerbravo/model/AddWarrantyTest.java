@@ -27,7 +27,7 @@ public class AddWarrantyTest {
     // public void hello() {}
 
     @Test
-    public void testCreationAddProduct() throws Exception {
+    public void testCreationAddWarranty() throws Exception {
        AddWarranty addwarranty = new AddWarranty.Builder() 
             .productSn("123BA321")
             .type("Hardware") //for example: hardware, water damage, software 

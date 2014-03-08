@@ -16,9 +16,9 @@ import org.testng.annotations.Test;
  *
  * @author foosh
  */
-public class EditProductTest {
+public class EditUserTest {
     
-    public EditProductTest() {
+    public EditUserTest() {
     }
     // TODO add test methods here.
     // The methods must be annotated with annotation @Test. For example:
@@ -26,24 +26,23 @@ public class EditProductTest {
     // @Test
     // public void hello() {}
 
-    @Test
-    public void testEditProduct() throws Exception {
-       AddProduct addproduct = new AddProduct.Builder() 
-            .model("S4")
-            .sn("123BA321")
-            .manufacturer("Samsung")
-            .purchaseDate("04112013")
-            .retailer("Vodacom-Somerset-01")
+     @Test
+    public void testEditUser() throws Exception {
+       AddUser adduser = new AddUser.Builder() 
+            .firstname("Mike")
+            .lastname("Foosh")
+            .id("9107085078081")
+            .contact("0724857747")
             .build();
-       EditProduct ed = new EditProduct();
-       addproduct = ed.editProduct("S4-Mini", "", "", "", "",addproduct);
-       Assert.assertEquals(addproduct.getModel(),"S4-Mini");
-       Assert.assertEquals(addproduct.getSn(),"123BA321");       
-       Assert.assertEquals(addproduct.getManufacturer(),"Samsung");   
-       Assert.assertEquals(addproduct.getPurchaseDate(),"04112013"); 
-       Assert.assertEquals(addproduct.getRetailer(),"Vodacom-Somerset-01");
+       EditUser eu = new EditUser();
+       adduser = eu.edituser("Michael", "", "", "", adduser);
+       Assert.assertEquals(adduser.getFirstname(),"Michael");
+       Assert.assertEquals(adduser.getLastname(),"Foosh");       
+       Assert.assertEquals(adduser.getId(),"9107085078081");       
+       Assert.assertEquals(adduser.getContact(),"0724857747");
         
     }
+    
     @BeforeClass
     public static void setUpClass() throws Exception {
     }

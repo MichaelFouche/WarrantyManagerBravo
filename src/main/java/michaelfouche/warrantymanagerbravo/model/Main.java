@@ -28,6 +28,8 @@ public class Main {
                 .purchaseDate("")
                 .retailer("")
                 .build();
+        
+        
         VerifyValidEntry vve = new VerifyValidEntry();
         boolean valid = vve.verifyValidEntry(fname, lname,id);
         

@@ -45,8 +45,8 @@ public class EditProduct {
         }
         AddProduct addproductTemp = new AddProduct.Builder()                
             .model(model)
-            .sn(manufacturer)
-            .manufacturer(sn)
+            .sn(sn)
+            .manufacturer(manufacturer)
             .purchaseDate(purchaseDate)
             .retailer(retailer)
             .build();

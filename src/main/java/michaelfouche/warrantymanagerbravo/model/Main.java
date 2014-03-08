@@ -16,10 +16,10 @@ public class Main {
         String lname = "Daniels";
         String id = "";
         AddUser adduser = new AddUser.Builder() 
-            .firstname("")
-            .lastname("")
-            .id("")
-            .contact("")
+            .firstname("Jack")
+            .lastname("Daniels")
+            .id("7542544")
+            .contact("0225558452")
             .build();
         AddProduct addproduct = new AddProduct.Builder()
                 .model("")

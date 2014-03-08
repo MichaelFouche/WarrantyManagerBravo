@@ -18,7 +18,7 @@ public class CalculateInWarranty extends DaysDifference{
     
     public boolean calculateInWarranty(Date purchaseDate, int warrantyLength){
         int daysDifference = (int)calculateDaysDifference(purchaseDate);
-        System.out.print(".."+daysDifference+"..");
+        //System.out.print(".."+daysDifference+"..");
         if(daysDifference<warrantyLength){
             //Still in warranty
             return true;

@@ -4,6 +4,8 @@
  */
 package michaelfouche.warrantymanagerbravo.model;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import org.testng.Assert;
 import static org.testng.Assert.*;
 import org.testng.annotations.AfterClass;
@@ -28,17 +30,19 @@ public class AddProductTest {
 
     @Test
     public void testCreationAddProduct() throws Exception {
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+        Date d = sdf.parse("04/11/2013");
        AddProduct addproduct = new AddProduct.Builder() 
             .model("S4")
             .sn("123BA321")
             .manufacturer("Samsung")
-            .purchaseDate("04112013")
+            .purchaseDate(d)
             .retailer("Vodacom-Somerset-01")
             .build();
        Assert.assertEquals(addproduct.getModel(),"S4");
        Assert.assertEquals(addproduct.getSn(),"123BA321");       
        Assert.assertEquals(addproduct.getManufacturer(),"Samsung");   
-       Assert.assertEquals(addproduct.getPurchaseDate(),"04112013"); 
+       Assert.assertEquals(addproduct.getPurchaseDate(),d); 
        Assert.assertEquals(addproduct.getRetailer(),"Vodacom-Somerset-01");
         
     }

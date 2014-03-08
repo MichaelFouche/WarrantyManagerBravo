@@ -4,6 +4,8 @@
  */
 package michaelfouche.warrantymanagerbravo.model;
 
+import java.util.Date;
+
 /**
  *
  * @author foosh
@@ -12,7 +14,7 @@ public class EditProduct {
     private String model;
     private String sn;
     private String manufacturer;
-    private String purchaseDate;
+    private Date purchaseDate;
     private String retailer;
     //AddProduct addproduct = new AddProduct;
     
@@ -21,7 +23,7 @@ public class EditProduct {
         
     }
     
-    public AddProduct editProduct(String mod, String s, String man, String pd, String re, AddProduct addproduct ){
+    public AddProduct editProduct(String mod, String s, String man, Date pd, String re, AddProduct addproduct ){
         model = mod;
         sn = s;
         manufacturer = man;
@@ -37,9 +39,9 @@ public class EditProduct {
         if(manufacturer.equals("")){
             manufacturer = addproduct.getManufacturer();
         }
-        if(purchaseDate.equals("")){
-            purchaseDate = addproduct.getPurchaseDate();
-        }
+        
+            purchaseDate = pd;
+        
         if(retailer.equals("")){
             retailer = addproduct.getRetailer();
         }

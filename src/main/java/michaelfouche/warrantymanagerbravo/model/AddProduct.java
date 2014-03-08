@@ -4,6 +4,8 @@
  */
 package michaelfouche.warrantymanagerbravo.model;
 
+import java.util.Date;
+
 /**
  *
  * @author foosh
@@ -13,7 +15,7 @@ public final class AddProduct {
     private String model;
     private String sn;
     private String manufacturer;
-    private String purchaseDate;
+    private Date purchaseDate;
     private String retailer;
     
     private AddProduct(){
@@ -32,7 +34,7 @@ public final class AddProduct {
         private String model;
         private String sn;
         private String manufacturer;
-        private String purchaseDate;
+        private Date purchaseDate;
         private String retailer;
         
         public Builder(){
@@ -51,7 +53,7 @@ public final class AddProduct {
             manufacturer = value;
             return this;
         }
-        public Builder purchaseDate(String value){
+        public Builder purchaseDate(Date value){
             purchaseDate = value;
             return this;
         }
@@ -76,7 +78,7 @@ public final class AddProduct {
         return manufacturer;
     }
 
-    public String getPurchaseDate() {
+    public Date getPurchaseDate() {
         return purchaseDate;
     }
 

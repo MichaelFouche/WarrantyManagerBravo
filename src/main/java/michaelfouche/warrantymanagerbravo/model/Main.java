@@ -42,7 +42,7 @@ public class Main {
         System.out.println("A warranty with 356 days is, bought on 04/11/2013 returns: " + validWarranty);
         validWarranty = ciw.calculateInWarranty(d, 60);
         System.out.println("A warranty with 60 days is, bought on 04/11/2013 returns: " + validWarranty);
-        VerifyValidEntry vve = new VerifyValidEntry();
+        VerifyValidUserEntry vve = new VerifyValidUserEntry();
         boolean valid = vve.verifyValidEntry(fname, lname,id);
         
         

@@ -10,7 +10,7 @@ import java.util.List;
  *
  * @author foosh
  */
-public class VerifyValidEntry {
+public class VerifyValidUserEntry {
     //This receives the entry from the user, when this has been accepted it calls a class to update UserCredentials (delete and reCreate the object)
     private String firstname;
     private String lastname;

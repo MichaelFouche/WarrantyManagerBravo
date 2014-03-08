@@ -16,9 +16,9 @@ import org.testng.annotations.Test;
  *
  * @author foosh
  */
-public class VerifyValidEntryTest {
+public class VerifyValidRetailerEntryTest {
     
-    public VerifyValidEntryTest() {
+    public VerifyValidRetailerEntryTest() {
     }
     // TODO add test methods here.
     // The methods must be annotated with annotation @Test. For example:
@@ -26,17 +26,19 @@ public class VerifyValidEntryTest {
     // @Test
     // public void hello() {}
 
-    @Test
+     @Test
     public void testVerifyValidEntryTrue() throws Exception {
-       VerifyValidUserEntry vve = new VerifyValidUserEntry();
-       Assert.assertTrue(vve.verifyValidEntry("Jack", "Daniels", "9107"));
+          
+       VerifyValidRetailerEntry vvwe = new VerifyValidRetailerEntry();
+       Assert.assertTrue(vvwe.verifyValidEntry("Vodacom",  "Western Cape","Somerset West"));
        
         
     }
     @Test
     public void testVerifyValidEntryFalse() throws Exception {
-       VerifyValidUserEntry vve = new VerifyValidUserEntry();       
-       Assert.assertFalse(vve.verifyValidEntry("", "Daniels", "9107"));
+       
+       VerifyValidRetailerEntry vvwe = new VerifyValidRetailerEntry();
+       Assert.assertFalse(vvwe.verifyValidEntry("Vodacom", "Western Cape",""));
         
     }
     

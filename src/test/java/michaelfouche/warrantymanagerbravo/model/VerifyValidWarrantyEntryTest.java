@@ -4,6 +4,8 @@
  */
 package michaelfouche.warrantymanagerbravo.model;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import org.testng.Assert;
 import static org.testng.Assert.*;
 import org.testng.annotations.AfterClass;
@@ -16,9 +18,9 @@ import org.testng.annotations.Test;
  *
  * @author foosh
  */
-public class VerifyValidEntryTest {
+public class VerifyValidWarrantyEntryTest {
     
-    public VerifyValidEntryTest() {
+    public VerifyValidWarrantyEntryTest() {
     }
     // TODO add test methods here.
     // The methods must be annotated with annotation @Test. For example:
@@ -28,15 +30,17 @@ public class VerifyValidEntryTest {
 
     @Test
     public void testVerifyValidEntryTrue() throws Exception {
-       VerifyValidUserEntry vve = new VerifyValidUserEntry();
-       Assert.assertTrue(vve.verifyValidEntry("Jack", "Daniels", "9107"));
+          
+       VerifyValidWarrantyEntry vvwe = new VerifyValidWarrantyEntry();
+       Assert.assertTrue(vvwe.verifyValidEntry("123AB321", "Hardware", 356));
        
         
     }
     @Test
     public void testVerifyValidEntryFalse() throws Exception {
-       VerifyValidUserEntry vve = new VerifyValidUserEntry();       
-       Assert.assertFalse(vve.verifyValidEntry("", "Daniels", "9107"));
+       
+       VerifyValidWarrantyEntry vvwe = new VerifyValidWarrantyEntry();
+       Assert.assertFalse(vvwe.verifyValidEntry("123AB321", "", 0));
         
     }
     

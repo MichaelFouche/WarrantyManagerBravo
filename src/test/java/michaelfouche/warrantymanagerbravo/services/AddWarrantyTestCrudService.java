@@ -4,42 +4,40 @@
  */
 package michaelfouche.warrantymanagerbravo.services;
 
-import michaelfouche.warrantymanagerbravo.model.Login.UserCredentials;
-import michaelfouche.warrantymanagerbravo.service.crud.UserCredentialsCrudservice;
+import michaelfouche.warrantymanagerbravo.model.Warranty.AddWarranty;
+import michaelfouche.warrantymanagerbravo.service.crud.AddWarrantyCrudservice;
 import org.mockito.Mock;
 import org.mockito.Mockito;
-import static org.mockito.Mockito.when;
 import org.mockito.MockitoAnnotations;
 import static org.testng.Assert.*;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Test;
 
 /**
  *
  * @author foosh
  */
-public class UserCredentialsTestCrudService {
+public class AddWarrantyTestCrudService {
     
-     @Mock
-    UserCredentialsCrudservice crudService;
+    @Mock
+    AddWarrantyCrudservice crudService;
      
      @BeforeMethod
     public void setUp() throws Exception {
         MockitoAnnotations.initMocks(this);
-        crudService = Mockito.mock(UserCredentialsCrudservice.class);
+        crudService = Mockito.mock(AddWarrantyCrudservice.class);
     }
 
     @Test
     public void testCreate() throws Exception {
-        UserCredentials uc = new UserCredentials.Builder() 
+        AddWarranty uc = new AddWarranty.Builder() 
             .userID("123321")
             .passCode("passw")
             
             .build();
-        UserCredentials returnQuestion = crudService.persist(uc);
+        AddWarranty returnQuestion = crudService.persist(uc);
         when(crudService.persist(uc)).thenReturn(returnQuestion);
         Mockito.verify(crudService).persist(uc);
 
@@ -48,12 +46,12 @@ public class UserCredentialsTestCrudService {
 
     @Test
     public void testRead() throws Exception {
-         UserCredentials uc = new UserCredentials.Builder() 
+         AddWarranty uc = new AddWarranty.Builder() 
             .userID("123321")
             .passCode("passw")
             
             .build();
-        UserCredentials returnQuestion = crudService.find(uc.getUserID());
+        AddWarranty returnQuestion = crudService.find(uc.getUserID());
         when(crudService.find(uc.getUserID())).thenReturn(returnQuestion);
         Mockito.verify(crudService).find(uc.getUserID());
 
@@ -63,13 +61,13 @@ public class UserCredentialsTestCrudService {
     public void testUpdate() throws Exception {
        
 
-         UserCredentials uc = new UserCredentials.Builder() 
+         AddWarranty uc = new AddWarranty.Builder() 
             .userID("123321")
             .passCode("passw")
             
             .build();
 
-        UserCredentials returnQuestion = crudService.merge(uc);
+        AddWarranty returnQuestion = crudService.merge(uc);
         when(crudService.merge(uc)).thenReturn(returnQuestion);
         Mockito.verify(crudService).merge(uc);
 
@@ -78,12 +76,12 @@ public class UserCredentialsTestCrudService {
     @Test
     public void testDelete() throws Exception {
 
-        UserCredentials uc = new UserCredentials.Builder() 
+        AddWarranty uc = new AddWarranty.Builder() 
             .userID("123321")
             .passCode("passw")
             
             .build();
-        UserCredentials returnQuestion = crudService.remove(uc);
+        AddWarranty returnQuestion = crudService.remove(uc);
         when(crudService.remove(uc)).thenReturn(returnQuestion);
         Mockito.verify(crudService).remove(uc);
 

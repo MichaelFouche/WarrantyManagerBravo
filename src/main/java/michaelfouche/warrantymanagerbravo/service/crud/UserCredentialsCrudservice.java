@@ -4,10 +4,13 @@
  */
 package michaelfouche.warrantymanagerbravo.service.crud;
 
+import michaelfouche.warrantymanagerbravo.model.Login.UserCredentials;
+import michaelfouche.warrantymanagerbravo.service.CrudService;
+
 /**
  *
  * @author foosh
  */
-public interface UserCredentialsCrudservice <UserCredentials, String>{
+public interface UserCredentialsCrudservice extends CrudService <UserCredentials, String>{
     
 }

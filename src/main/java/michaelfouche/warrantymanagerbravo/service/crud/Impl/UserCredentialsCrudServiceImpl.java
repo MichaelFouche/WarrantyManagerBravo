@@ -15,7 +15,7 @@ import org.springframework.transaction.annotation.Transactional;
  * @author foosh
  */
 public class UserCredentialsCrudServiceImpl implements UserCredentialsCrudservice{
-  /*     @Override
+       @Override
     @Transactional(propagation = Propagation.SUPPORTS)
     public UserCredentials find(String s) {
         return null;
@@ -44,5 +44,5 @@ public class UserCredentialsCrudServiceImpl implements UserCredentialsCrudservic
     @Transactional(propagation = Propagation.NOT_SUPPORTED)
     public List<UserCredentials> findAll() {
         return null;
-    }*/
+    }
 }

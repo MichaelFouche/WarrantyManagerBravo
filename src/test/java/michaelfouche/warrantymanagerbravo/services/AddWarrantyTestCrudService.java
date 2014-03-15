@@ -10,10 +10,12 @@ import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 import static org.testng.Assert.*;
+import static org.mockito.Mockito.when;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
 
 /**
  *
@@ -33,9 +35,9 @@ public class AddWarrantyTestCrudService {
     @Test
     public void testCreate() throws Exception {
         AddWarranty uc = new AddWarranty.Builder() 
-            .userID("123321")
-            .passCode("passw")
-            
+            .productSn("123BA321")
+            .type("Hardware") //for example: hardware, water damage, software 
+            .duration(356)  //days
             .build();
         AddWarranty returnQuestion = crudService.persist(uc);
         when(crudService.persist(uc)).thenReturn(returnQuestion);
@@ -47,26 +49,23 @@ public class AddWarrantyTestCrudService {
     @Test
     public void testRead() throws Exception {
          AddWarranty uc = new AddWarranty.Builder() 
-            .userID("123321")
-            .passCode("passw")
-            
+            .productSn("123BA321")
+            .type("Hardware") //for example: hardware, water damage, software 
+            .duration(356)  //days
             .build();
-        AddWarranty returnQuestion = crudService.find(uc.getUserID());
-        when(crudService.find(uc.getUserID())).thenReturn(returnQuestion);
-        Mockito.verify(crudService).find(uc.getUserID());
+        AddWarranty returnQuestion = crudService.find(uc.getProductSn());
+        when(crudService.find(uc.getProductSn())).thenReturn(returnQuestion);
+        Mockito.verify(crudService).find(uc.getProductSn());
 
     }
 
     @Test
     public void testUpdate() throws Exception {
-       
-
-         AddWarranty uc = new AddWarranty.Builder() 
-            .userID("123321")
-            .passCode("passw")
-            
+       AddWarranty uc = new AddWarranty.Builder() 
+            .productSn("123BA321")
+            .type("Hardware") //for example: hardware, water damage, software 
+            .duration(356)  //days
             .build();
-
         AddWarranty returnQuestion = crudService.merge(uc);
         when(crudService.merge(uc)).thenReturn(returnQuestion);
         Mockito.verify(crudService).merge(uc);
@@ -75,11 +74,10 @@ public class AddWarrantyTestCrudService {
 
     @Test
     public void testDelete() throws Exception {
-
         AddWarranty uc = new AddWarranty.Builder() 
-            .userID("123321")
-            .passCode("passw")
-            
+            .productSn("123BA321")
+            .type("Hardware") //for example: hardware, water damage, software 
+            .duration(356)  //days
             .build();
         AddWarranty returnQuestion = crudService.remove(uc);
         when(crudService.remove(uc)).thenReturn(returnQuestion);

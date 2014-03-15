@@ -11,9 +11,11 @@ import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 import static org.testng.Assert.*;
 import org.testng.annotations.AfterClass;
+import static org.mockito.Mockito.when;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
 
 /**
  *
@@ -33,9 +35,10 @@ public class AddUserTestCrudService {
     @Test
     public void testCreate() throws Exception {
         AddUser uc = new AddUser.Builder() 
-            .userID("123321")
-            .passCode("passw")
-            
+            .firstname("Mike")
+            .lastname("Foosh")
+            .id("9107085078081")
+            .contact("0724857747")
             .build();
         AddUser returnQuestion = crudService.persist(uc);
         when(crudService.persist(uc)).thenReturn(returnQuestion);
@@ -47,26 +50,25 @@ public class AddUserTestCrudService {
     @Test
     public void testRead() throws Exception {
          AddUser uc = new AddUser.Builder() 
-            .userID("123321")
-            .passCode("passw")
-            
+            .firstname("Mike")
+            .lastname("Foosh")
+            .id("9107085078081")
+            .contact("0724857747")
             .build();
-        AddUser returnQuestion = crudService.find(uc.getUserID());
-        when(crudService.find(uc.getUserID())).thenReturn(returnQuestion);
-        Mockito.verify(crudService).find(uc.getUserID());
+        AddUser returnQuestion = crudService.find(uc.getId());
+        when(crudService.find(uc.getId())).thenReturn(returnQuestion);
+        Mockito.verify(crudService).find(uc.getId());
 
     }
 
     @Test
     public void testUpdate() throws Exception {
-       
-
-         AddUser uc = new AddUser.Builder() 
-            .userID("123321")
-            .passCode("passw")
-            
+       AddUser uc = new AddUser.Builder() 
+            .firstname("Mike")
+            .lastname("Foosh")
+            .id("9107085078081")
+            .contact("0724857747")
             .build();
-
         AddUser returnQuestion = crudService.merge(uc);
         when(crudService.merge(uc)).thenReturn(returnQuestion);
         Mockito.verify(crudService).merge(uc);
@@ -75,11 +77,11 @@ public class AddUserTestCrudService {
 
     @Test
     public void testDelete() throws Exception {
-
         AddUser uc = new AddUser.Builder() 
-            .userID("123321")
-            .passCode("passw")
-            
+            .firstname("Mike")
+            .lastname("Foosh")
+            .id("9107085078081")
+            .contact("0724857747")
             .build();
         AddUser returnQuestion = crudService.remove(uc);
         when(crudService.remove(uc)).thenReturn(returnQuestion);

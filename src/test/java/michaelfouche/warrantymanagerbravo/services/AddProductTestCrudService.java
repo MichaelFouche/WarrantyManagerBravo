@@ -10,12 +10,14 @@ import michaelfouche.warrantymanagerbravo.model.Product.AddProduct;
 import michaelfouche.warrantymanagerbravo.service.crud.AddProductCrudservice;
 import org.mockito.Mock;
 import org.mockito.Mockito;
+import static org.mockito.Mockito.when;
 import org.mockito.MockitoAnnotations;
 import static org.testng.Assert.*;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
 
 /**
  *
@@ -61,22 +63,23 @@ public class AddProductTestCrudService {
             .purchaseDate(d)
             .retailer("Vodacom-Somerset-01")
             .build();
-        AddProduct returnQuestion = crudService.find(uc.getSN());
-        when(crudService.find(uc.getSN())).thenReturn(returnQuestion);
-        Mockito.verify(crudService).find(uc.getSN());
+        AddProduct returnQuestion = crudService.find(uc.getSn());
+        when(crudService.find(uc.getSn())).thenReturn(returnQuestion);
+        Mockito.verify(crudService).find(uc.getSn());
 
     }
 
     @Test
     public void testUpdate() throws Exception {
-       
-
-         AddProduct uc = new AddProduct.Builder() 
-            .userID("123321")
-            .passCode("passw")
-            
+       SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+        Date d = sdf.parse("04/11/2013");
+        AddProduct uc = new AddProduct.Builder() 
+            .model("S4")
+            .sn("123BA321")
+            .manufacturer("Samsung")
+            .purchaseDate(d)
+            .retailer("Vodacom-Somerset-01")
             .build();
-
         AddProduct returnQuestion = crudService.merge(uc);
         when(crudService.merge(uc)).thenReturn(returnQuestion);
         Mockito.verify(crudService).merge(uc);
@@ -85,11 +88,14 @@ public class AddProductTestCrudService {
 
     @Test
     public void testDelete() throws Exception {
-
+SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+        Date d = sdf.parse("04/11/2013");
         AddProduct uc = new AddProduct.Builder() 
-            .userID("123321")
-            .passCode("passw")
-            
+            .model("S4")
+            .sn("123BA321")
+            .manufacturer("Samsung")
+            .purchaseDate(d)
+            .retailer("Vodacom-Somerset-01")
             .build();
         AddProduct returnQuestion = crudService.remove(uc);
         when(crudService.remove(uc)).thenReturn(returnQuestion);
